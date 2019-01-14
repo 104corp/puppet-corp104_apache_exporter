@@ -1,0 +1,3 @@
+fixtures:
+  symlinks:
+    "corp104_apache_status_exporter": "#{source_dir}"

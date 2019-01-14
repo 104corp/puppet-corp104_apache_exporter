@@ -1,0 +1,48 @@
+{
+  "name": "104corp-corp104_apache_status_exporter",
+  "description": "corp104_apache_status_exporter Module for Debian and Ubuntu.",
+  "version": "1.0.0",
+  "author": "104corp",
+  "summary": "Install, deploysm, and configures apache_status_exporter.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/104corp/corp104_apache_status_exporter",
+  "project_page": "https://github.com/104corp/corp104_apache_status_exporter",
+  "issues_url": "https://github.com/104corp/corp104_apache_status_exporter/issues",
+    "tags": [
+    "104",
+    "apache",
+    "prometheus",
+    "exporter",
+    "puppet"
+  ],
+  "dependencies": [
+    {
+      "name": "puppet/archive",
+      "version_requirement": ">= 1.0.0 < 6.0.0"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": "4.7.0 < 7.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "14.04",
+        "16.04"
+      ]
+    }
+  ]
+}
+
