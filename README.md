@@ -36,7 +36,7 @@ include '::corp104_apache_status_exporter'
 
 ```puppet
 class { 'corp104_apache_status_exporter':
-  python_version => '3.7.0',
+  download_url => 'https://github.com/Lusitaniae/apache_exporter/releases/download/v0.5.0/apache_exporter-0.5.0.linux-amd64.tar.gz',
 }
 ```
 
@@ -45,7 +45,7 @@ class { 'corp104_apache_status_exporter':
 ```puppet
 class { 'corp104_apache_status_exporter':
   http_proxy   => 'http://change.proxy.com:3128',
-  python_version => '3.7.0',
+  download_url => 'https://github.com/Lusitaniae/apache_exporter/releases/download/v0.5.0/apache_exporter-0.5.0.linux-amd64.tar.gz',
 }
 ```
 
@@ -60,6 +60,7 @@ class { 'corp104_apache_status_exporter':
 #### Private classes
 
 * corp104_apache_status_exporter::install Handles the packages.
+* corp104_apache_status_exporter::service Handles the packages.
 
 ## Limitations
 
