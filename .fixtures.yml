@@ -4,4 +4,4 @@ fixtures:
   repositories:
     archive:
       repo: "https://github.com/voxpupuli/puppet-archive.git"
-      ref: "3.2.1"
+      ref: "v3.2.1"
