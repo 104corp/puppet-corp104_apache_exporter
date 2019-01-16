@@ -1,3 +1,7 @@
 fixtures:
   symlinks:
     "corp104_apache_status_exporter": "#{source_dir}"
+  repositories:
+    archive:
+      repo: "https://github.com/voxpupuli/puppet-archive.git"
+      ref: "3.2.1"
