@@ -51,7 +51,7 @@ class corp104_apache_status_exporter::install inherits corp104_apache_status_exp
 
   # manage user and group
   if $corp104_apache_status_exporter::manage_user {
-    ensure_resource('user', [ $corp104_apache_status_exporter::user ], {
+    ensure_resource ('user', [ $corp104_apache_status_exporter::user ], {
       ensure => 'present',
       system => true,
       groups => $corp104_apache_status_exporter::extra_groups,
@@ -62,7 +62,7 @@ class corp104_apache_status_exporter::install inherits corp104_apache_status_exp
     }
   }
   if $corp104_apache_status_exporter::manage_group {
-    ensure_resource('group', [ $corp104_apache_status_exporter::group ], {
+    ensure_resource ('group', [ $corp104_apache_status_exporter::group ], {
       ensure => 'present',
       system => true,
     })
