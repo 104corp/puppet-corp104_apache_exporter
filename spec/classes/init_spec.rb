@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'corp104_apache_status_exporter', :type => 'class' do
+describe 'corp104_apache_exporter', :type => 'class' do
   context 'with defaults for all parameters' do
     let(:facts) do
       { 
@@ -13,9 +13,9 @@ describe 'corp104_apache_status_exporter', :type => 'class' do
       }
     end
     it do
-      should contain_class('corp104_apache_status_exporter')
-      should contain_class('corp104_apache_status_exporter::install')
-      should contain_class('corp104_apache_status_exporter::service')
+      should contain_class('corp104_apache_exporter')
+      should contain_class('corp104_apache_exporter::install')
+      should contain_class('corp104_apache_exporter::service')
     end
 
     it do

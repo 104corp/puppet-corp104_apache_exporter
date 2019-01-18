@@ -1,1 +1,1 @@
-corp104_apache_status_exporter::env_file_path: '/etc/sysconfig'
+corp104_apache_exporter::env_file_path: '/etc/sysconfig'

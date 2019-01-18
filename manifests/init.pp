@@ -1,7 +1,7 @@
-# Class: corp104_apache_status_exporter
+# Class: corp104_apache_exporter
 # ===========================
 #
-# Full description of class corp104_apache_status_exporter here.
+# Full description of class corp104_apache_exporter here.
 #
 # Parameters
 # ----------
@@ -28,7 +28,7 @@
 # --------
 #
 # @example
-#    class { 'corp104_apache_status_exporter':
+#    class { 'corp104_apache_exporter':
 #      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
 #    }
 #
@@ -42,7 +42,7 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class corp104_apache_status_exporter (
+class corp104_apache_exporter (
   String $scrape_uri,
   Optional[String] $extra_options,
   Optional[String] $download_url,
@@ -64,9 +64,9 @@ class corp104_apache_status_exporter (
   String $env_file_path,
   Hash[String, Scalar] $env_vars = {},
 ){
-  contain corp104_apache_status_exporter::install
-  contain corp104_apache_status_exporter::service
+  contain corp104_apache_exporter::install
+  contain corp104_apache_exporter::service
 
-  Class['::corp104_apache_status_exporter::install']
-  ~> Class['::corp104_apache_status_exporter::service']
+  Class['::corp104_apache_exporter::install']
+  ~> Class['::corp104_apache_exporter::service']
 }

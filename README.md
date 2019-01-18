@@ -1,12 +1,12 @@
-# puppet module corp104_apache_status_exporter
-[![Build Status](https://travis-ci.com/104corp/puppet-corp104_apache_status_exporter.svg?branch=master)](https://travis-ci.com/104corp/puppet-corp104_apache_status_exporter)
+# puppet module corp104_apache_exporter
+[![Build Status](https://travis-ci.com/104corp/puppet-corp104_apache_exporter.svg?branch=master)](https://travis-ci.com/104corp/puppet-corp104_apache_exporter)
 
 
 #### Table of Contents
 
 1. [Description](#description)
-1. [Setup - The basics of getting started with corp104_apache_status_exporter](#setup)
-    * [Beginning with corp104_apache_status_exporter](#beginning-with-corp104_apache_status_exporter)
+1. [Setup - The basics of getting started with corp104_apache_exporter](#setup)
+    * [Beginning with corp104_apache_exporter](#beginning-with-corp104_apache_exporter)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 1. [Limitations - OS compatibility, etc.](#limitations)
@@ -14,28 +14,28 @@
 
 ## Description
 
-The corp104_apache_status_exporter module installs, configures, and manages the corp104_apache_status_exporter service across a range of operating systems and distributions.
+The corp104_apache_exporter module installs, configures, and manages the corp104_apache_exporter service across a range of operating systems and distributions.
 
 ## Setup
 
-### Beginning with corp104_apache_status_exporter
+### Beginning with corp104_apache_exporter
 
-`include '::corp104_apache_status_exporter'` is enough to get you up and running.
+`include '::corp104_apache_exporter'` is enough to get you up and running.
 
 ## Usage
 
-All parameters for the ntp module are contained within the main `::corp104_apache_status_exporter` class, so for any function of the module, set the options you want. See the common usages below for examples.
+All parameters for the ntp module are contained within the main `::corp104_apache_exporter` class, so for any function of the module, set the options you want. See the common usages below for examples.
 
-### Install and enable corp104_apache_status_exporter
+### Install and enable corp104_apache_exporter
 
 ```puppet
-include '::corp104_apache_status_exporter'
+include '::corp104_apache_exporter'
 ```
 
 ### Install specially python version. default '3.7.0'
 
 ```puppet
-class { 'corp104_apache_status_exporter':
+class { 'corp104_apache_exporter':
   download_url => 'https://github.com/Lusitaniae/apache_exporter/releases/download/v0.5.0/apache_exporter-0.5.0.linux-amd64.tar.gz',
 }
 ```
@@ -43,7 +43,7 @@ class { 'corp104_apache_status_exporter':
 ### Download package to Use a Proxy
 
 ```puppet
-class { 'corp104_apache_status_exporter':
+class { 'corp104_apache_exporter':
   http_proxy   => 'http://change.proxy.com:3128',
   download_url => 'https://github.com/Lusitaniae/apache_exporter/releases/download/v0.5.0/apache_exporter-0.5.0.linux-amd64.tar.gz',
 }
@@ -55,16 +55,16 @@ class { 'corp104_apache_status_exporter':
 
 #### Public classes
 
-* corp104_apache_status_exporter: Main class, includes all other classes.
+* corp104_apache_exporter: Main class, includes all other classes.
 
 #### Private classes
 
-* corp104_apache_status_exporter::install Handles the packages.
-* corp104_apache_status_exporter::service Handles the packages.
+* corp104_apache_exporter::install Handles the packages.
+* corp104_apache_exporter::service Handles the packages.
 
 ## Limitations
 
-This module cannot guarantee installation of corp104_apache_status_exporter versions that are not available on  platform repositories.
+This module cannot guarantee installation of corp104_apache_exporter versions that are not available on  platform repositories.
 
 This module is officially [supported](https://forge.puppetlabs.com/supported) for the following Java versions and platforms:
 
@@ -76,4 +76,4 @@ For more information, see our [module contribution guide.](https://docs.puppetla
 
 ### Contributors
 
-To see who's already involved, see the [list of contributors.](https://github.com/104corp/puppet-corp104_apache_status_exporter/graphs/contributors)
+To see who's already involved, see the [list of contributors.](https://github.com/104corp/puppet-corp104_apache_exporter/graphs/contributors)

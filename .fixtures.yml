@@ -1,6 +1,6 @@
 fixtures:
   symlinks:
-    "corp104_apache_status_exporter": "#{source_dir}"
+    "corp104_apache_exporter": "#{source_dir}"
   repositories:
     archive:
       repo: "https://github.com/voxpupuli/puppet-archive.git"
@@ -10,4 +10,4 @@ fixtures:
       ref: "5.1.0"
     systemd:
       repo: "https://github.com/camptocamp/puppet-systemd"
-      ref: "2.1.0"
+      ref: "2.1.0"cd 

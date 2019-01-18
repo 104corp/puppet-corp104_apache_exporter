@@ -9,5 +9,5 @@
 # Learn more about module testing here:
 # https://docs.puppet.com/guides/tests_smoke.html
 #
-include ::corp104_apache_status_exporter
+include ::corp104_apache_exporter
 
