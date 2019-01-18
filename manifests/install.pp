@@ -5,13 +5,6 @@ class corp104_apache_exporter::install inherits corp104_apache_exporter {
   # install
   case $corp104_apache_exporter::install_method {
     'url': {
-      # file { "/opt/${corp104_apache_exporter::package_name}-${corp104_apache_exporter::version}.${facts['kernel']}-${facts['architecture']}":
-      #   ensure => directory,
-      #   owner  => 'root',
-      #   group  => 0, # 0 instead of root because OS X uses "wheel".
-      #   mode   => '0755',
-      # }
-      # -> 
       archive { "/tmp/${corp104_apache_exporter::package_name}-${corp104_apache_exporter::version}.tar.gz":
         ensure          => present,
         extract         => true,
@@ -21,7 +14,6 @@ class corp104_apache_exporter::install inherits corp104_apache_exporter {
         creates         => "/opt/${corp104_apache_exporter::package_name}-${corp104_apache_exporter::version}.linux-${facts['architecture']}/${corp104_apache_exporter::package_name}",
         cleanup         => true,
         proxy_server    => $corp104_apache_exporter::http_proxy,
-        # before          => File["/opt/${corp104_apache_exporter::package_name}-${corp104_apache_exporter::version}.${facts['kernel']}-${facts['architecture']}"],
       }
 
       file { "/opt/${corp104_apache_exporter::package_name}-${corp104_apache_exporter::version}.linux-${facts['architecture']}/${corp104_apache_exporter::package_name}":
