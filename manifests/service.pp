@@ -6,7 +6,14 @@ class corp104_apache_exporter::service inherits corp104_apache_exporter {
     default => $corp104_apache_exporter::init_style,
   }
 
-  service { $corp104_apache_exporter::service_name:
+  exec { 'systemd-reload-apache-exporter':
+    command     => "systemctl restart ${corp104_apache_exporter::service_name}",
+    path        => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+    refreshonly => true,
+    require     => Exec['systemctl-daemon-reload'],
+  }
+
+  service { 'apache-exporter':
     ensure   => $corp104_apache_exporter::service_ensure,
     name     => $corp104_apache_exporter::service_name,
     enable   => $corp104_apache_exporter::service_enable,
