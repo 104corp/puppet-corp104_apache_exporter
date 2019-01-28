@@ -1,3 +1,7 @@
+## 2019-01-28 - Release v1.2.0
+
+- Add apache exporter version to facter.
+
 ## 2019-01-28 - Release v1.1.0
 
 - fix systemd reload service require restart command. 
