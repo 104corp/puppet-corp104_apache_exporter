@@ -77,7 +77,7 @@ class corp104_apache_exporter::install inherits corp104_apache_exporter {
           owner  => 'root',
           group  => 'root',
           mode   => '0755',
-        }
+        }-2
       }
       'systemd' : {
         include 'systemd'
