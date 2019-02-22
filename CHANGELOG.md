@@ -1,3 +1,7 @@
+## 2019-02-22 - Release v1.3.0
+
+- Fix OS architecture and package name not match.
+
 ## 2019-01-28 - Release v1.2.0
 
 - Add apache exporter version to facter.
