@@ -1,6 +1,12 @@
 class corp104_apache_exporter::install inherits corp104_apache_exporter {
 
   $options = "-scrape_uri=\"${corp104_apache_exporter::scrape_uri}\" ${corp104_apache_exporter::extra_options}"
+  $os_arch = $facts['architecture'] ? {
+    'i386'   => '386',
+    'x86_64' => 'amd64',
+    'amd64'  => 'amd64',
+    default  => 'amd64',
+  }
 
   # install
   case $corp104_apache_exporter::install_method {
@@ -11,12 +17,12 @@ class corp104_apache_exporter::install inherits corp104_apache_exporter {
         extract_path    => '/opt',
         source          => $corp104_apache_exporter::download_url,
         checksum_verify => false,
-        creates         => "/opt/${corp104_apache_exporter::package_name}-${corp104_apache_exporter::version}.linux-${facts['architecture']}/${corp104_apache_exporter::package_name}",
+        creates         => "/opt/${corp104_apache_exporter::package_name}-${corp104_apache_exporter::version}.linux-${os_arch}/${corp104_apache_exporter::package_name}",
         cleanup         => true,
         proxy_server    => $corp104_apache_exporter::http_proxy,
       }
 
-      file { "/opt/${corp104_apache_exporter::package_name}-${corp104_apache_exporter::version}.linux-${facts['architecture']}/${corp104_apache_exporter::package_name}":
+      file { "/opt/${corp104_apache_exporter::package_name}-${corp104_apache_exporter::version}.linux-${os_arch}/${corp104_apache_exporter::package_name}":
           owner => 'root',
           group => 0, # 0 instead of root because OS X uses "wheel".
           mode  => '0555',
@@ -24,7 +30,7 @@ class corp104_apache_exporter::install inherits corp104_apache_exporter {
       -> file { "${corp104_apache_exporter::bin_dir}/${corp104_apache_exporter::service_name}":
           ensure => link,
           notify => Service['apache-exporter'],
-          target => "/opt/${corp104_apache_exporter::package_name}-${corp104_apache_exporter::version}.linux-${facts['architecture']}/${corp104_apache_exporter::package_name}",
+          target => "/opt/${corp104_apache_exporter::package_name}-${corp104_apache_exporter::version}.linux-${os_arch}/${corp104_apache_exporter::package_name}",
       }
     }
     'package': {
