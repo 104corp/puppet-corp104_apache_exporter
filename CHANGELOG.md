@@ -1,3 +1,8 @@
+
+## 2019-02-27 - Release v1.4.0
+
+- Fix could not find resource Exec[systemctl-daemon-reload].
+
 ## 2019-02-22 - Release v1.3.0
 
 - Fix OS architecture and package name not match.
