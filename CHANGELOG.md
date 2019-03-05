@@ -1,4 +1,8 @@
 
+## 2019-03-05 - Release v1.5.0
+
+- Fix apache_exporter fact error when apache-exporter command not found.
+
 ## 2019-02-27 - Release v1.4.0
 
 - Fix could not find resource Exec[systemctl-daemon-reload].
