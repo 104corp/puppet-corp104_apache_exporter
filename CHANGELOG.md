@@ -1,3 +1,6 @@
+## 2019-03-07 - Release v1.6.0
+
+- Fix duplicate declaration: Service[apache-exporter].
 
 ## 2019-03-05 - Release v1.5.0
 

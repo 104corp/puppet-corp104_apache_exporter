@@ -83,16 +83,13 @@ class corp104_apache_exporter::install inherits corp104_apache_exporter {
           owner  => 'root',
           group  => 'root',
           mode   => '0755',
-        }-2
+        }
       }
       'systemd' : {
         include 'systemd'
         systemd::unit_file {"${corp104_apache_exporter::service_name}.service":
           content => template("${module_name}/daemon.systemd.erb"),
-          #notify  => Service['apache-exporter'],
-        }
-        ~> service { 'apache-exporter':
-           ensure => 'running',
+          notify  => Service['apache-exporter'],
         }
       }
       'sysv' : {
